@@ -10,26 +10,34 @@
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Bad+Script" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 
 <body>
     <div class="body__container">
         <div class="header__row">
-            <h3 class="page-header">Numerology Calculator</h3>
+            <h2 class="page-header">Numerology Calculator</h2>
         </div>
         <div class="content__container">
             <div class="input__container">
-                <input type="text" class="input__input" id="input" />
+                <div class="input__content" id="input-default">
+                    <input type="text" class="input__input" />
+                    <span class="input__result"></span>
+                </div>
+                <div class="input__content">
+                    <input type="text" class="input__input" id="input-1" />
+                    <span class="input__result"> </span>
+                </div>
             </div>
             <div class="add__icon" id="add-icon">
                 <i class="fa-solid fa-circle-plus"></i>
             </div>
         </div>
-        <button class="btn btn-primary" type="button">Calculate</button>
     </div>
 </body>
 <script src="script.js"></script>
+<script src="calci.js"></script>
 
 </html>

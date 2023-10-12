@@ -9,34 +9,10 @@ var letterMap = {
   6: ["U", "V", "W"],
   7: ["O", "Z"],
   8: ["F", "P"],
-  9: [" "],
+  // 9: [" "],
 };
 
-const findSum = (tNum) => {
-  var value = tNum;
-  var sum = 0;
-  while (value) {
-    sum += value % 10;
-    value = Math.floor(value / 10);
-  }
-  return sum;
-};
-
-const calculateNumerology = () => {
-  let valueTotal = 0;
-  for (let i of inputName) {
-    for (var key in letterMap) {
-      if (letterMap[key].includes(i)) {
-        valueTotal += Number(key);
-      }
-    }
-  }
-  numerology = findSum(valueTotal);
-};
-
-console.log(inputName + " - " + numerology);
-
-let lb = {
+let planetMap = {
   1: "புதன் / Budha (Mercury)",
   2: "சந்திரன் / Chandra (Moon)",
   3: "குரு / Guru (Jupiter)",
@@ -47,5 +23,28 @@ let lb = {
   8: "சனி / Shani (Saturn)",
   9: "செவ்வாய் / Mangala (Mars)",
 };
+const findSum = (tNum) => {
+  var value = tNum;
+  var sum = 0;
+  while (value) {
+    sum += value % 10;
+    value = Math.floor(value / 10);
+  }
+  return sum;
+};
 
-console.log(lb[numerology]);
+function calculateNumerology(curValue) {
+  let valueTotal = 0;
+  for (let i of curValue) {
+    for (var key in letterMap) {
+      console.log(key);
+      if (letterMap[key].includes(i)) {
+        valueTotal += Number(parseInt(key));
+      }
+    }
+  }
+  console.log(valueTotal);
+  numerology = findSum(valueTotal);
+  console.log(curValue + " - " + numerology);
+  console.log(planetMap[numerology]);
+}
